@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.ramihussien.countryweathermvvm"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+    implementation 'com.android.support:support-v4:28.0.0-rc01'
+    implementation 'com.android.support:design:28.0.0-rc01'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Room database
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    // Dagger - dependency injection
+    implementation "com.google.dagger:dagger:2.15"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.15"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.15"
+    implementation "com.google.dagger:dagger-android-support:2.15"
+
+    // View model and live data
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    // Retrofit live data adapter
+    implementation "com.github.leonardoxh:retrofit2-livedata-adapter:1.1.2"
+
+    // Top snack bar
+    implementation 'com.androidadvance:topsnackbar:1.1.1'
+
+}
